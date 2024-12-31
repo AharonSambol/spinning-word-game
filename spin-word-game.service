@@ -1,0 +1,14 @@
+[Unit]
+Description=Aharon's Word Game
+After=multi-user.target
+
+[Service]
+User=moshe
+Group=moshe
+Type=idle
+WorkingDirectory=/home/moshe/git/spinning-word-game/
+Environment="NODE_PATH=/home/moshe/.nvm/versions/node/v22.12.0/lib/node_modules"
+ExecStart=/home/moshe/.nvm/versions/node/v22.12.0/bin/npm run dev -- --host
+
+[Install]
+WantedBy=multi-user.target
